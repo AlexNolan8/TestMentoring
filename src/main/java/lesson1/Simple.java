@@ -76,7 +76,8 @@ public class Simple {
      * Рассчитать время в секундах, прошедшее с начала суток (30035 в данном случае).
      */
     public static int seconds(int hours, int minutes, int seconds) {
-        return 0;
+
+        return  hours * 3600 + minutes * 60 + seconds;
     }
 
 
@@ -87,8 +88,20 @@ public class Simple {
      * Определить длину того же отрезка в метрах (в данном случае 18.98).
      * 1 сажень = 3 аршина = 48 вершков, 1 вершок = 4.445 см.
      */
+//    public static double lengthInMeters(int sagenes, int arshins, int vershoks) {
+//        double a = (double) vershoks * 0.04445;
+//        double b = (double) arshins * (double) 16 * 0.04445;
+//        System.out.println(b);
+//        double c = (double) sagenes * 48 * 0.04445;
+//        System.out.println(c);
+//        System.out.println(a + b + c);
+//        return a + b + c;
+//    }
     public static double lengthInMeters(int sagenes, int arshins, int vershoks) {
-        return 0;
+        double a = vershoks * 0.04445;
+        double b = arshins *  16 * 0.04445;
+        double c = sagenes * 48 * 0.04445;
+        return a + b + c;
     }
 
 
@@ -99,7 +112,7 @@ public class Simple {
      * Вывести значение того же угла в радианах (например, 0.63256).
      */
     public static double angleInRadian(int grad, int min, int sec) {
-        return 0;
+        return sec * 0.00000480 + min * 0.00029088 + grad * 0.01745329;
     }
 
 
@@ -110,7 +123,7 @@ public class Simple {
      * Например, расстояние между (3, 0) и (0, 4) равно 5
      */
     public static double trackLength(double x1, double y1, double x2, double y2) {
-        return 0;
+        return Math.sqrt(Math.pow((x2 - x1), 2 ) + Math.pow((y2 - y1), 2) );
     }
 
 
@@ -145,7 +158,13 @@ public class Simple {
      * Например, 100 рублей под 10% годовых превратятся в 133.1 рубля
      */
     public static double accountInThreeYears(int initial, int percent) {
-        return 0;
+
+        return initial * Math.pow(1 + (double) percent / 100, 3);
+
+//        double totalForTheFirstYear = initial * ((double) percent / 100);
+//        double totalForTheSecondYear = totalForTheFirstYear * ((double) percent / 100);
+//        double totalForTheThirdYear = totalForTheSecondYear * ((double) percent / 100);
+//        return totalForTheThirdYear;
     }
 
 
